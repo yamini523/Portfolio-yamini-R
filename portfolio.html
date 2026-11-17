@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yamini R · AI & Data Science Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6fb;--card:#fff;--text:#1b2340;--muted:#5d6785;--accent:#6b79c4;--soft:#eceefa;--line:#e3e5f0;--shadow:0 1px 2px rgba(27,35,64,.04),0 8px 24px rgba(27,35,64,.06);--nav:rgba(247,246,251,.85);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10142a;--card:#171c36;--text:#eceefb;--muted:#a3abc9;--accent:#9aa6ee;--soft:#222849;--line:#2a3157;--shadow:0 8px 24px rgba(0,0,0,.3);--nav:rgba(16,20,42,.85)}}
+:root[data-theme="dark"]{--bg:#10142a;--card:#171c36;--text:#eceefb;--muted:#a3abc9;--accent:#9aa6ee;--soft:#222849;--line:#2a3157;--shadow:0 8px 24px rgba(0,0,0,.3);--nav:rgba(16,20,42,.85)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+h1,h2,h3{line-height:1.2;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:8px}
+.eyebrow{color:var(--accent);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.lead{color:var(--muted);max-width:620px;margin-bottom:36px}
+i[data-lucide],svg.lucide{width:1.15em;height:1.15em;stroke-width:1.8}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--nav);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .2s}
+.links a:hover{color:var(--accent)}
+.menu{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:8px;color:var(--text);cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font:600 .95rem inherit;font-family:inherit;text-decoration:none;border:1px solid var(--line);color:var(--text);background:var(--card);cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+:root:not([data-theme="light"]) .btn.primary{}
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--soft);color:var(--accent);padding:6px 14px;border-radius:99px;font-size:.82rem;font-weight:600;margin-bottom:20px}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--muted);max-width:520px;margin-bottom:28px;font-size:1.05rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.avatar{justify-self:center;width:min(300px,80%);aspect-ratio:1;border-radius:32px;background:var(--soft);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;place-items:center;position:relative}
+.avatar b{font-size:5rem;font-weight:800;color:var(--accent);letter-spacing:-.04em}
+.avatar .chip{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 12px;font-size:.78rem;font-weight:600;display:flex;gap:6px;align-items:center;box-shadow:var(--shadow);color:var(--text)}
+.chip.a{top:-14px;right:-14px}.chip.b{bottom:-14px;left:-14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+.about p{color:var(--muted);margin-bottom:14px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{text-align:center;padding:20px 12px}
+.stat b{display:block;font-size:1.7rem;color:var(--accent)}
+.stat span{font-size:.8rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{background:var(--soft);color:var(--text);border-radius:99px;padding:5px 13px;font-size:.82rem;font-weight:500}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.93rem}
+.proj .art{height:120px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--accent);margin-bottom:18px}
+.proj .art svg{width:44px;height:44px;stroke-width:1.4}
+.proj .more{display:inline-flex;gap:6px;align-items:center;margin-top:16px;color:var(--accent);font-weight:600;font-size:.9rem;text-decoration:none}
+.proj .more:hover{text-decoration:underline}
+.timeline{border-left:2px solid var(--line);margin-left:10px;display:grid;gap:20px}
+.tl{position:relative;margin-left:28px}
+.tl::before{content:"";position:absolute;left:-37px;top:30px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl small{color:var(--accent);font-weight:700;font-size:.8rem}
+.ach{display:flex;gap:14px;align-items:flex-start;padding:20px}
+.ach .ico{margin:0;flex:none}
+.ach p{color:var(--text);font-weight:500;font-size:.95rem}
+.sub{font-size:1.05rem;margin:36px 0 16px;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
+.row{display:flex;gap:12px;align-items:center;color:var(--text);text-decoration:none;padding:12px 0;font-size:.95rem;overflow-wrap:anywhere}
+.row .ico{margin:0;width:40px;height:40px;flex:none}
+.row:hover{color:var(--accent)}
+form{display:grid;gap:14px}
+input,textarea{width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;font-size:.95rem;transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--soft)}
+textarea{min-height:120px;resize:vertical}
+footer{border-top:1px solid var(--line);padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:.88rem}
+footer nav{all:unset;display:flex;gap:18px;flex-wrap:wrap}
+footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--accent)}
+.soc{display:flex;gap:10px}
+.soc a{width:38px;height:38px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;transition:transform .2s}
+.soc a:hover{transform:translateY(-2px)}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}}
+@media (max-width:860px){
+.hero .wrap,.about,.contact{grid-template-columns:1fr}
+.g3{grid-template-columns:1fr 1fr}
+.avatar{order:-1;width:200px}.avatar b{font-size:3.5rem}
+.menu{display:block}
+.links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;padding:16px 24px;gap:16px;align-items:flex-start}
+.links.open{display:flex}
+section{padding:60px 0}
+}
+@media (max-width:560px){.g3,.g2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Yamini<span>.</span></a>
+    <button class="menu" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')"><i data-lucide="menu"></i></button>
+    <div class="links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="pill"><i data-lucide="sparkles"></i> Open to internships</div>
+      <h1>Hi, I’m <em>Yamini R</em>.<br>AI &amp; Data Science student.</h1>
+      <p>Third-year B.Tech student in Coimbatore, building AI-driven products and full-stack apps that solve real-world problems.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View Projects <i data-lucide="arrow-right"></i></a>
+        <a class="btn" href="#contact"><i data-lucide="mail"></i> Contact Me</a>
+      </div>
+    </div>
+    <div class="avatar reveal"><b>YR</b>
+      <div class="chip a"><i data-lucide="brain"></i> Machine Learning</div>
+      <div class="chip b"><i data-lucide="code-2"></i> Java · Python</div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="reveal">
+      <div class="eyebrow">About</div>
+      <h2>Curious builder, steady learner.</h2>
+      <p>I’m a dedicated third-year B.Tech Artificial Intelligence and Data Science student, proficient in Java, Python, SQL, and Data Structures &amp; Algorithms.</p>
+      <p>I’m enthusiastic about software development and machine learning, and I enjoy applying technical skills to real-world challenges, from IoT monitoring to AI assistants for students and citizens.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="card stat"><b>8.95</b><span>CGPA</span></div>
+      <div class="card stat"><b>4</b><span>Projects</span></div>
+      <div class="card stat"><b>4</b><span>Hackathon finals</span></div>
+      <div class="card stat"><b>2nd</b><span>Place, 8-hr hackathon</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Skills</div><h2>What I work with</h2>
+    <p class="lead">A focused toolkit across programming, data and the web.</p>
+    <div class="grid g3">
+      <div class="card reveal"><div class="ico"><i data-lucide="terminal"></i></div><h3>Programming</h3><p>Core languages for software and problem solving.</p><div class="tags"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">C</span><span class="tag">DSA</span></div></div>
+      <div class="card reveal"><div class="ico"><i data-lucide="brain-circuit"></i></div><h3>AI &amp; Data</h3><p>Machine learning and data handling.</p><div class="tags"><span class="tag">Machine Learning</span><span class="tag">SQL</span></div></div>
+      <div class="card reveal"><div class="ico"><i data-lucide="globe"></i></div><h3>Web Development</h3><p>Building full-stack applications.</p><div class="tags"><span class="tag">Web Development</span></div></div>
+    </div>
+    <div class="tags reveal" style="margin-top:22px"><span class="tag"><i data-lucide="users" style="width:1em;height:1em;vertical-align:-2px"></i> Teamwork</span><span class="tag">Time Management</span><span class="tag">Critical Thinking</span></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Projects</div><h2>Selected work</h2>
+    <p class="lead">Projects that blend AI, IoT and full-stack development.</p>
+    <div class="grid g2">
+      <article class="card proj reveal"><div class="art"><i data-lucide="droplets"></i></div><h3>Water Quality Monitoring System</h3><p>Real-time IoT solution for tracking water quality metrics and generating environmental insights.</p><div class="tags"><span class="tag">IoT</span><span class="tag">Real-time</span></div><a class="more" href="https://github.com/yamini523" target="_blank" rel="noopener">View on GitHub <i data-lucide="arrow-up-right"></i></a></article>
+      <article class="card proj reveal"><div class="art"><i data-lucide="graduation-cap"></i></div><h3>Alumni Connect</h3><p>Full-stack alumni networking platform with profile management, event updates, and community engagement features.</p><div class="tags"><span class="tag">Full-stack</span><span class="tag">Community</span></div><a class="more" href="https://github.com/yamini523" target="_blank" rel="noopener">View on GitHub <i data-lucide="arrow-up-right"></i></a></article>
+      <article class="card proj reveal"><div class="art"><i data-lucide="landmark"></i></div><h3>SchemeSmart</h3><p>AI-driven multilingual platform that recommends personalized government welfare schemes based on user eligibility.</p><div class="tags"><span class="tag">AI</span><span class="tag">Multilingual</span></div><a class="more" href="https://github.com/yamini523" target="_blank" rel="noopener">View on GitHub <i data-lucide="arrow-up-right"></i></a></article>
+      <article class="card proj reveal"><div class="art"><i data-lucide="message-square-text"></i></div><h3>CampusMind</h3><p>AI-powered student support platform with intelligent academic assistance, document-based knowledge retrieval, voice input, and personalized conversational responses.</p><div class="tags"><span class="tag">AI</span><span class="tag">Voice input</span><span class="tag">Retrieval</span></div><a class="more" href="https://github.com/yamini523" target="_blank" rel="noopener">View on GitHub <i data-lucide="arrow-up-right"></i></a></article>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow">Education</div><h2>Academic journey</h2>
+    <p class="lead">&nbsp;</p>
+    <div class="timeline">
+      <div class="tl card reveal"><small>2024 – 2028 · CGPA 8.95</small><h3>B.Tech, Artificial Intelligence &amp; Data Science</h3><p>Dr.N.G.P. Institute of Technology, Coimbatore</p></div>
+      <div class="tl card reveal"><small>2024 · 91%</small><h3>Higher Secondary (Class XII)</h3><p>Shri Nehru Vidyalaya Matriculation Higher Secondary School</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <div class="eyebrow">Achievements &amp; Certifications</div><h2>Milestones</h2>
+    <p class="lead">Competitions, courses and hands-on experience.</p>
+    <div class="grid g2">
+      <div class="card ach reveal"><div class="ico"><i data-lucide="trophy"></i></div><p>Secured 2nd Place in an 8-Hour Hackathon</p></div>
+      <div class="card ach reveal"><div class="ico"><i data-lucide="flag"></i></div><p>Finalist, National Level Hackathon</p></div>
+      <div class="card ach reveal"><div class="ico"><i data-lucide="medal"></i></div><p>Finalist, Odoo Hackathon</p></div>
+      <div class="card ach reveal"><div class="ico"><i data-lucide="award"></i></div><p>Reached the finals of the Campus Modelathon</p></div>
+    </div>
+    <h3 class="sub">Internship &amp; Courses</h3>
+    <div class="grid g3">
+      <div class="card ach reveal"><div class="ico"><i data-lucide="briefcase"></i></div><p>Generative AI Internship (15 days), Gateway Software Solutions</p></div>
+      <div class="card ach reveal"><div class="ico"><i data-lucide="cloud"></i></div><p>Cloud Computing, NPTEL</p></div>
+      <div class="card ach reveal"><div class="ico"><i data-lucide="mouse-pointer-click"></i></div><p>Human Computer Interaction, NPTEL</p></div>
+      <div class="card ach reveal"><div class="ico"><i data-lucide="database"></i></div><p>Introduction to Big Data</p></div>
+      <div class="card ach reveal"><div class="ico"><i data-lucide="bot"></i></div><p>Introduction to Large Language Models (LLMs)</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div><h2>Let’s connect</h2>
+    <p class="lead">Open to internships, collaborations and hackathon teams. Say hello!</p>
+    <div class="contact">
+      <div class="card reveal">
+        <a class="row" href="mailto:ryamini523@gmail.com"><span class="ico"><i data-lucide="mail"></i></span>ryamini523@gmail.com</a>
+        <a class="row" href="tel:+919626877523"><span class="ico"><i data-lucide="phone"></i></span>+91 96268 77523</a>
+        <div class="row"><span class="ico"><i data-lucide="map-pin"></i></span>Coimbatore, Tamil Nadu</div>
+        <a class="row" href="https://linkedin.com/in/yamini-r-840075325" target="_blank" rel="noopener"><span class="ico"><i data-lucide="linkedin"></i></span>LinkedIn</a>
+        <a class="row" href="https://github.com/yamini523" target="_blank" rel="noopener"><span class="ico"><i data-lucide="github"></i></span>GitHub</a>
+        <a class="row" href="https://leetcode.com/u/EOLEBERAma/" target="_blank" rel="noopener"><span class="ico"><i data-lucide="code-xml"></i></span>LeetCode</a>
+      </div>
+      <form class="card reveal" id="cf">
+        <input id="n" placeholder="Your name" required>
+        <input id="e" type="email" placeholder="Your email" required>
+        <textarea id="m" placeholder="Your message" required></textarea>
+        <button class="btn primary" type="submit" style="justify-content:center"><i data-lucide="send"></i> Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Yamini R</span>
+    <nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+    <div class="soc">
+      <a href="https://github.com/yamini523" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+      <a href="https://linkedin.com/in/yamini-r-840075325" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+      <a href="mailto:ryamini523@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script>
+document.documentElement.classList.add('js');
+try{lucide.createIcons()}catch(e){}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*70+'ms';io.observe(el)});
+document.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.links').classList.remove('open')})});
+document.getElementById('cf').addEventListener('submit',function(ev){ev.preventDefault();
+var n=document.getElementById('n').value,e=document.getElementById('e').value,m=document.getElementById('m').value;
+location.href='mailto:ryamini523@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(m+'\n\n'+n+' ('+e+')');});
+</script>
+</body>
+</html>
